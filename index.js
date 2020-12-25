@@ -36,7 +36,11 @@ app.post('/messages', (req, res) => {
 
     console.log("----------------------------------");
     console.log(`Incoming message from:`);
-    console.log(req);
+    console.log(req.body);
+    console.log("----------------------------------");
+    console.log(req.params);
+    console.log("----------------------------------");
+    console.log(req.headers);
     console.log("----------------------------------");
     // if (req.body.Body == "מאיה") {
     //     switch (Math.floor(Math.random() * 10)) {
