@@ -33,9 +33,10 @@ app.post('/messages', (req, res) => {
 
     // req.session.counter = smsCount + 1;
     let message = "עזוב אחי אם זה לא מאיה זה לא בא בחשבון...";
-    console.log(req.body);
+
     console.log("----------------------------------");
-    console.log(`Incoming message from ${req.body.From}: ${req.body.Body}`);
+    console.log(`Incoming message from:`);
+    console.log(req);
     console.log("----------------------------------");
     // if (req.body.Body == "מאיה") {
     //     switch (Math.floor(Math.random() * 10)) {
