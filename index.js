@@ -23,15 +23,50 @@ const app = express();
 app.use(session({ secret: 'anything-you-want-but-keep-secret' }));
 
 app.post('/messages', (req, res) => {
-    const smsCount = req.session.counter || 0;
+    // const smsCount = req.session.counter || 0;
 
-    let message = 'Hello, thanks for the new message.';
+    // let message = 'Hello, thanks for the new message.';
 
-    if (smsCount > 0) {
-        message = 'Hello, thanks for message number ' + (smsCount + 1);
+    // if (smsCount > 0) {
+    //     message = 'Hello, thanks for message number ' + (smsCount + 1);
+    // }
+
+    // req.session.counter = smsCount + 1;
+    let message = "עזוב אחי רק מאיה בראש שלי...";
+    if (req.body.Body == "מאיה") {
+        switch (Math.floor(Math.random() * 10)) {
+            case 0:
+                message = "המדהימה";
+                break;
+            case 1:
+                message = "הפצצת על";
+                break;
+            case 2:
+                message = "אהבת חיי";
+                break;
+            case 3:
+                message = "הנסיכה";
+                break;
+            case 4:
+                message = "אין כמוה בעולם";
+                break;
+            case 5:
+                message = "הדוגמנית";
+                break;
+            case 6:
+                message = "הכי יפה בעולם";
+                break;
+            case 7:
+                message = "מרהיבה";
+                break;
+            case 8:
+                message = "עוצרת נשימה";
+                break;
+            case 9:
+                message = "מסובבת הראשים!";
+        }
+
     }
-
-    req.session.counter = smsCount + 1;
 
     const twiml = new MessagingResponse();
     twiml.message(message);
