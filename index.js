@@ -36,48 +36,40 @@ app.post('/messages', (req, res) => {
     // req.session.counter = smsCount + 1;
     let message = "עזוב אחי אם זה לא מאיה זה לא בא בחשבון...";
 
-    console.log("----------------------------------");
-    console.log(`Incoming message from:`);
-    console.log(req.body);
-    console.log("----------------------------------");
-    console.log(req.params);
-    console.log("----------------------------------");
-    console.log(req.headers);
-    console.log("----------------------------------");
-    // if (req.body.Body == "מאיה") {
-    //     switch (Math.floor(Math.random() * 10)) {
-    //         case 0:
-    //             message = "המדהימה";
-    //             break;
-    //         case 1:
-    //             message = "הפצצת על";
-    //             break;
-    //         case 2:
-    //             message = "אהבת חיי";
-    //             break;
-    //         case 3:
-    //             message = "הנסיכה";
-    //             break;
-    //         case 4:
-    //             message = "אין כמוה בעולם";
-    //             break;
-    //         case 5:
-    //             message = "הדוגמנית";
-    //             break;
-    //         case 6:
-    //             message = "הכי יפה בעולם";
-    //             break;
-    //         case 7:
-    //             message = "מרהיבה";
-    //             break;
-    //         case 8:
-    //             message = "עוצרת נשימה";
-    //             break;
-    //         case 9:
-    //             message = "מסובבת הראשים!";
-    //     }
+    if (req.body.Body == "מאיה") {
+        switch (Math.floor(Math.random() * 10)) {
+            case 0:
+                message = "המדהימה";
+                break;
+            case 1:
+                message = "הפצצת על";
+                break;
+            case 2:
+                message = "אהבת חיי";
+                break;
+            case 3:
+                message = "הנסיכה";
+                break;
+            case 4:
+                message = "אין כמוה בעולם";
+                break;
+            case 5:
+                message = "הדוגמנית";
+                break;
+            case 6:
+                message = "הכי יפה בעולם";
+                break;
+            case 7:
+                message = "מרהיבה";
+                break;
+            case 8:
+                message = "עוצרת נשימה";
+                break;
+            case 9:
+                message = "מסובבת הראשים!";
+        }
 
-    // }
+    }
 
     const twiml = new MessagingResponse();
     twiml.message(message);
