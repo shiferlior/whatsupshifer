@@ -15,10 +15,12 @@ client.messages
 //Server conversation
 const http = require('http');
 const express = require('express');
+const { urlencoded } = require('body-parser');
 //const session = require('express-session');
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
 const app = express();
+app.use(urlencoded({ extended: false }));
 
 //app.use(session({ secret: 'anything-you-want-but-keep-secret' }));
 
