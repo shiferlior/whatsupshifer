@@ -15,12 +15,12 @@ client.messages
 //Server conversation
 const http = require('http');
 const express = require('express');
-const session = require('express-session');
+//const session = require('express-session');
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
 const app = express();
 
-app.use(session({ secret: 'anything-you-want-but-keep-secret' }));
+//app.use(session({ secret: 'anything-you-want-but-keep-secret' }));
 
 app.post('/messages', (req, res) => {
     // const smsCount = req.session.counter || 0;
