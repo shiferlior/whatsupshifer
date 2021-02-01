@@ -38,7 +38,8 @@ app.post('/messages', (req, res) => {
     let message = "עזוב אחי אם זה לא מאיה זה לא בא בחשבון...";
 
     if(req.body.body == "גחנון בכפר") {
-        message == "תבחר מספר";
+        message = "תבחר מספר";
+
     }
 
     if (req.body.Body == "מאיה") {
