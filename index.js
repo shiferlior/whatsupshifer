@@ -37,6 +37,10 @@ app.post('/messages', (req, res) => {
     // req.session.counter = smsCount + 1;
     let message = "עזוב אחי אם זה לא מאיה זה לא בא בחשבון...";
 
+    if(req.body.body == "גחנון בכפר") {
+        message == "תבחר מספר";
+    }
+
     if (req.body.Body == "מאיה") {
         switch (Math.floor(Math.random() * 10)) {
             case 0:
